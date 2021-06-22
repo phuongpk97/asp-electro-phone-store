@@ -137,6 +137,12 @@
                     $('#coupon-input').hide();
                 }
 
+                if ($("#txt_name_cod").val() === "" || $("#txt_address_cod").val() === "" || $("#txt_phoneNumber_cod").val() === "") {
+                    $("#stripe_api").hide();
+                } else {
+                    $("#stripe_api").show();
+                }
+
                 var html = '';
                 var total = 0;
 

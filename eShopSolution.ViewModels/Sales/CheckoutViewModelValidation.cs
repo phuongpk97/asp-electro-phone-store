@@ -16,7 +16,9 @@ namespace eShopSolution.ViewModels.Sales
                 .MaximumLength(500).WithMessage("Địa chỉ không được quá 500 kí tự");
 
             RuleFor(x => x.CheckoutModel.PhoneNumber).NotEmpty().WithMessage("Số điện thoại không được để trống")
-                .MaximumLength(12).WithMessage("Số điện thoại không được quá 12 kí tự");
+                .MaximumLength(12).WithMessage("Số điện thoại không được quá 12 kí tự")
+                .MinimumLength(10).WithMessage("Số điện thoại tối thiểu 10 kí tự")
+                .Matches(@"[/^\d+$/]").WithMessage("Số điện thoại phải là chữ số");
         }
     }
 }
